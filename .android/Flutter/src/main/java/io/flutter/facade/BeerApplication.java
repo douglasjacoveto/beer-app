@@ -16,9 +16,9 @@ import java.util.Observer;
 
 import io.flutter.view.FlutterView;
 
-public class MainApplication extends CoreObservable implements Observer {
+public class BeerApplication extends CoreObservable implements Observer {
 
-    public MainApplication init(Context context, CoreApplication coreApplication) {
+    public BeerApplication init(Context context, CoreApplication coreApplication) {
         this.addObserver(this);
 
         coreApplication.addModuleObservable(GlobalObservers.Modules.FLUTTER, this);
