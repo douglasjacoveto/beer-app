@@ -1,6 +1,9 @@
 def flutterPluginVersion = 'managed'
 
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group='com.mystudies.flutter_beer'
 
 android {
     compileSdkVersion 28
@@ -11,11 +14,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.mystudies.flutter_beer.host"
+        //applicationId "com.mystudies.flutter_beer.host"
         minSdkVersion 19
         targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        //versionCode 1
+        //versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
