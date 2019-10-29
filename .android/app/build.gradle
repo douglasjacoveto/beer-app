@@ -1,9 +1,6 @@
 def flutterPluginVersion = 'managed'
 
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
-
-group='com.mystudies.flutter_beer'
 
 android {
     compileSdkVersion 28
@@ -32,8 +29,8 @@ android {
             signingConfig signingConfigs.debug
         }
     }
-
 }
+
 buildDir = new File(rootProject.projectDir, "../build/host")
 dependencies {
     implementation project(':flutter')

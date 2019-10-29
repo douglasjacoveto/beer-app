@@ -16,6 +16,16 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven {
+            credentials {
+                username git_username
+                password git_password
+            }
+            authentication{
+                basic(BasicAuthentication)
+            }
+            url "https://bitbucket.org/squad42/artefatos/raw/releases"
+        }
     }
 }
 

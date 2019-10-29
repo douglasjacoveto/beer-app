@@ -49,5 +49,5 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     implementation 'androidx.appcompat:appcompat:1.0.2'
 
-    implementation project(':core')
+    implementation 'squad42:com.mystudies.core:1.0.2'
 }
