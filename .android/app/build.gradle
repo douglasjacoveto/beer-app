@@ -1,6 +1,6 @@
 def flutterPluginVersion = 'managed'
 
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 28
@@ -11,7 +11,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.mystudies.flutter_beer.host"
+//        applicationId "com.mystudies.flutter_beer.host"
         minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
@@ -33,6 +33,7 @@ android {
 }
 buildDir = new File(rootProject.projectDir, "../build/host")
 dependencies {
+    implementation project(':core')
     implementation project(':flutter')
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.0.2'
