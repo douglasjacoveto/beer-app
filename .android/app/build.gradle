@@ -2,8 +2,6 @@ def flutterPluginVersion = 'managed'
 
 apply plugin: 'com.android.library'
 
-apply plugin: 'maven'
-
 android {
     compileSdkVersion 28
 
@@ -13,7 +11,7 @@ android {
     }
 
     defaultConfig {
-        //applicationId "com.mystudies.flutter_beer.host"
+//        applicationId "com.mystudies.flutter_beer.host"
         minSdkVersion 19
         targetSdkVersion 28
         //versionCode 1
@@ -35,6 +33,7 @@ android {
 
 buildDir = new File(rootProject.projectDir, "../build/host")
 dependencies {
+    implementation project(':core')
     implementation project(':flutter')
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.0.2'
@@ -42,38 +41,4 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
     testImplementation 'junit:junit:4.12'
-}
-
-
-repositories {
-    maven {
-        url "https://raw.github.com/synergian/wagon-git/releases"
-    }
-}
-
-configurations {
-    deployerJar
-}
-
-dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    deployerJar "ar.com.synergian:wagon-git:0.2.5"
-}
-
-uploadArchives {
-    dependsOn build
-    configuration = configurations.archives
-    repositories.mavenDeployer {
-        pom.groupId = COMPANY
-        pom.artifactId = ARTIFACT_PACKAGE
-        pom.version = ARTIFACT_VERSION
-        configuration = configurations.deployerJar
-        repository(url: 'git:releases://https://' + USERNAME + '@bitbucket.org/squad42/artefatos.git')
-        pom.project {
-            name ARTIFACT_NAME
-            packaging ARTIFACT_PACKAGING
-            description ARTIFACT_DESCRIPTION
-            url REPOSITORY_NAME
-        }
-    }
 }
