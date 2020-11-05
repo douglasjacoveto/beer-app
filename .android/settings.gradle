@@ -1,12 +1,6 @@
 // Generated file. Do not edit.
-include ':app', ':core'
+include ':app'
 
 rootProject.name = 'android_generated'
 setBinding(new Binding([gradle: this]))
 evaluate(new File(settingsDir, 'include_flutter.groovy'))
-
-include ':flutter-beer-app'
-project(':flutter-beer-app').projectDir = new File('../../flutter-beer-app')
-
-include ':flutter-beer-app'
-project(':flutter-beer-app').projectDir = new File('../../flutter-beer-app')

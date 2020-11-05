@@ -7,8 +7,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.1'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1' // to enable build with jitpack
+        classpath 'com.android.tools.build:gradle:3.5.0'
     }
 }
 
@@ -16,16 +15,6 @@ allprojects {
     repositories {
         google()
         jcenter()
-        maven {
-            credentials {
-                username git_username
-                password git_password
-            }
-            authentication{
-                basic(BasicAuthentication)
-            }
-            url "https://bitbucket.org/squad42/artefatos/raw/releases"
-        }
     }
 }
 
